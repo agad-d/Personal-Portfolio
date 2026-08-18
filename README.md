@@ -64,9 +64,14 @@ To edit content, update the text directly inside `index.html`. Colors, fonts, an
 2. Netlify auto-detects it as a static site — no build command needed.
 3. Deploy — you'll get a live URL instantly.
 
+## Live Preview Link
+[Preview](https://codealpha-portfolio-task.vercel.app/)
+
 ## 📄 License
 
 Free to use as a learning reference or starting template.
+
+
 
 ---
 
