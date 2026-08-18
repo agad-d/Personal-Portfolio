@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Not — Developer Portfolio (Practice Project)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Starfield canvas, sits behind everything except the hero -->
+<canvas id="stars"></canvas>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#home" class="nav__brand">N<span>.</span></a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#home" class="nav__link active">Home</a>
+    <a href="#about" class="nav__link">About</a>
+    <a href="#skills" class="nav__link">Skills</a>
+    <a href="#projects" class="nav__link">Projects</a>
+    <a href="#resume" class="nav__link">Resume</a>
+    <a href="#contact" class="nav__link">Contact</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ============ HOME / HERO ============ -->
+<section id="home" class="hero">
+  <div class="hero__grid"></div>
+  <div class="hero__blob hero__blob--a"></div>
+  <div class="hero__blob hero__blob--b"></div>
+  <div class="hero__blob hero__blob--c"></div>
+
+  <div class="hero__content reveal">
+    <p class="hero__eyebrow"><span class="dot"></span> Currently building things that ship</p>
+    <h1 class="hero__title">
+      I'm <span class="hero__name">Not</span> —
+      <span class="hero__typed" id="typed"></span>
+    </h1>
+    <p class="hero__sub">
+      11th-grade student who builds digital products, NGO websites, and
+      the occasional over-engineered frontend experiment. This site is a
+      practice build, not a real client project — see the note at the bottom.
+    </p>
+    <div class="hero__cta">
+      <a href="#projects" class="btn btn--primary">View Projects</a>
+      <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+    </div>
+  </div>
+
+  <a href="#about" class="hero__scroll" aria-label="Scroll down">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </a>
+</section>
+
+<main>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">About</span>
+      <h2 class="section__title">A bit about how I got here</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <p>
+          I started with plain HTML &amp; CSS pages, then went down the usual
+          rabbit hole — Git, React, backend basics, and now design systems.
+          Alongside that I run a small digital products shop, build websites
+          for local NGOs and schools, and spend spare hours on physics
+          olympiad prep and small electronics builds.
+        </p>
+        <p>
+          I like projects that force me to learn something uncomfortable —
+          a new API, a rendering quirk, a deployment pipeline that doesn't
+          want to cooperate. This portfolio is one of those: built to
+          practice layout, motion, and responsive structure end to end.
+        </p>
+        <div class="about__stats">
+          <div class="stat">
+            <span class="stat__num" data-count="15">0</span>
+            <span class="stat__label">Projects shipped</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="3">0</span>
+            <span class="stat__label">NGO / school sites</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="100">0</span>
+            <span class="stat__label">% self-taught</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__card reveal">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span>
+            <span class="terminal__title">about-me.js</span>
+          </div>
+          <pre class="terminal__body"><code><span class="tok-key">const</span> <span class="tok-var">not</span> = {
+  <span class="tok-prop">role</span>: <span class="tok-str">"Student & Web Developer"</span>,
+  <span class="tok-prop">based_in</span>: <span class="tok-str">"Balochistan, Pakistan"</span>,
+  <span class="tok-prop">grade</span>: <span class="tok-str">"11th, BBSE curriculum"</span>,
+  <span class="tok-prop">stack</span>: [<span class="tok-str">"HTML"</span>, <span class="tok-str">"CSS"</span>, <span class="tok-str">"JS"</span>, <span class="tok-str">"React"</span>],
+  <span class="tok-prop">alsoInto</span>: [<span class="tok-str">"physics"</span>, <span class="tok-str">"ESP32"</span>, <span class="tok-str">"design"</span>],
+  <span class="tok-prop">status</span>: <span class="tok-str">"open to learning + collab"</span>,
+};</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section--alt">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">Skills</span>
+      <h2 class="section__title">Tools I reach for</h2>
+    </div>
+
+    <div class="skills__grid">
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">◆</div>
+        <h3>Frontend</h3>
+        <p>HTML5, CSS3, JavaScript (ES6+), React, responsive & accessible layout.</p>
+        <div class="skill-bar"><span style="--w:90%"></span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">▲</div>
+        <h3>Design Systems</h3>
+        <p>Design tokens, component libraries, motion & micro-interaction design.</p>
+        <div class="skill-bar"><span style="--w:80%"></span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">●</div>
+        <h3>Tooling</h3>
+        <p>Git & GitHub, npm, Vercel deploys, Framer Motion, Tailwind.</p>
+        <div class="skill-bar"><span style="--w:85%"></span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">■</div>
+        <h3>Product & Content</h3>
+        <p>PDF/print design, marketing copy, storefront & landing page structure.</p>
+        <div class="skill-bar"><span style="--w:88%"></span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">✦</div>
+        <h3>Electronics</h3>
+        <p>ESP32 prototyping, sensor integration, basic embedded logic.</p>
+        <div class="skill-bar"><span style="--w:60%"></span></div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card__icon">✚</div>
+        <h3>Problem Solving</h3>
+        <p>Physics olympiad prep — structured, first-principles problem breakdown.</p>
+        <div class="skill-bar"><span style="--w:75%"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">Projects</span>
+      <h2 class="section__title">Things I've built</h2>
+    </div>
+
+    <div class="projects__grid">
+      <article class="project-card reveal">
+        <div class="project-card__glow"></div>
+        <span class="project-card__tag">NGO Website</span>
+        <h3>Samaj Development Council</h3>
+        <p>Single-page NGO site with an interactive district map, impact
+        calculator, and a transparency dashboard — built vanilla, tested
+        with Playwright.</p>
+        <div class="project-card__tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <a href="#" class="project-card__link">View project →</a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__glow"></div>
+        <span class="project-card__tag">Ecommerce</span>
+        <h3>SIA Storefront</h3>
+        <p>Premium Next.js storefront for a digital-products shop, with
+        Framer Motion transitions and a Radix UI component layer.</p>
+        <div class="project-card__tech">
+          <span>Next.js</span><span>Framer Motion</span><span>Radix UI</span>
+        </div>
+        <a href="#" class="project-card__link">View project →</a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__glow"></div>
+        <span class="project-card__tag">IoT</span>
+        <h3>ESP32 Water Level Monitor</h3>
+        <p>Sensor-driven water level tracker built on ESP32, exploring
+        embedded logic and live data readouts.</p>
+        <div class="project-card__tech">
+          <span>ESP32</span><span>C++</span><span>Sensors</span>
+        </div>
+        <a href="#" class="project-card__link">View project →</a>
+      </article>
+
+      <article class="project-card reveal">
+        <div class="project-card__glow"></div>
+        <span class="project-card__tag">Frontend Experiment</span>
+        <h3>Generative Music Player</h3>
+        <p>A music player exploring the Web Audio API for generative sound
+        and a Spotify-connected browsing layer.</p>
+        <div class="project-card__tech">
+          <span>Web Audio API</span><span>JavaScript</span><span>CSS</span>
+        </div>
+        <a href="#" class="project-card__link">View project →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ RESUME ============ -->
+  <section id="resume" class="section section--alt">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">Resume</span>
+      <h2 class="section__title">Experience & background</h2>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline__item">
+        <span class="timeline__dot"></span>
+        <div class="timeline__content">
+          <span class="timeline__date">2025 — Present</span>
+          <h3>Founder, Digital Products Shop</h3>
+          <p>Designing and selling printable planners, cheat sheets, and
+          study guides; running the storefront, marketing, and product
+          pipeline end to end.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <span class="timeline__dot"></span>
+        <div class="timeline__content">
+          <span class="timeline__date">2025</span>
+          <h3>Freelance Web Developer</h3>
+          <p>Built and shipped websites for local NGOs and schools,
+          including full design systems and interactive features.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <span class="timeline__dot"></span>
+        <div class="timeline__content">
+          <span class="timeline__date">2024 — Present</span>
+          <h3>Physics Olympiad Prep</h3>
+          <p>Self-directed preparation using HRK, structured around a
+          concepts-first, problem-solving-second study plan.</p>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <span class="timeline__dot"></span>
+        <div class="timeline__content">
+          <span class="timeline__date">2024</span>
+          <h3>Started Building on the Web</h3>
+          <p>First projects in HTML/CSS, then Git, then progressively more
+          ambitious frontend work.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume__cta reveal">
+      <a href="#" class="btn btn--primary">Download Resume (PDF)</a>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="section__head reveal">
+      <span class="section__eyebrow">Contact</span>
+      <h2 class="section__title">Let's talk</h2>
+    </div>
+
+    <div class="contact__grid">
+      <div class="contact__info reveal">
+        <p>
+          Have a project in mind, or just want to compare notes on frontend
+          weirdness? My inbox is open.
+        </p>
+        <ul class="contact__list">
+          <li><span>Email</span><a href="mailto:hello@example.com">hello@example.com</a></li>
+          <li><span>GitHub</span><a href="https://github.com/agad-cell" target="_blank" rel="noopener">github.com/agad-cell</a></li>
+          <li><span>Location</span><a>Balochistan, Pakistan</a></li>
+        </ul>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm">
+        <div class="field">
+          <input type="text" id="name" required>
+          <label for="name">Your Name</label>
+        </div>
+        <div class="field">
+          <input type="email" id="email" required>
+          <label for="email">Your Email</label>
+        </div>
+        <div class="field">
+          <textarea id="message" rows="4" required></textarea>
+          <label for="message">Message</label>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        <p class="form__status" id="formStatus"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <a href="#home" class="nav__brand">N<span>.</span></a>
+    <div class="footer__socials">
+      <a href="#" aria-label="GitHub">GH</a>
+      <a href="#" aria-label="LinkedIn">LI</a>
+      <a href="#" aria-label="Twitter">TW</a>
+    </div>
+  </div>
+  <p class="footer__disclaimer">
+    ⚠️ Disclaimer: This is <strong>not my real portfolio</strong>. It was
+    built purely as a learning/practice project (HTML, CSS &amp; JS —
+    layout, responsiveness, scroll animation, and hover effects). Content,
+    stats, and links are illustrative, not actual claims.
+  </p>
+  <p class="footer__copy">© 2026 Not — Practice Build.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
